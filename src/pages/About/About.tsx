@@ -15,9 +15,6 @@ type Props = {};
 
 const About = (props: Props) => {
 
-  return (
-    <div className="w-full h-[100vh] flex flex-col">
-
   return (  
     <div className="w-[100vw] h-[100vh] ">
 
