@@ -9,6 +9,10 @@ import bgImg from "/Images/bgImg.png";
 import { useState } from "react";
 import { Career } from "./pages/Career/Career";
 import TechStack from "./pages/TechStacks/TechStack";
+import ITConsultation from "./pages/Service/ITConsultation";
+import WebAndMobileServices from "./pages/Service/WebAndMobileServices";
+import ERP from "./pages/Service/ERP";
+import AIDA from "./pages/Service/AIDA";
 
 function App() {
   const [barOffset, setBarOffset] = useState({ x: 0, y: 0 });
@@ -46,6 +50,10 @@ function App() {
             }
           />
           <Route path="tech-stack" element={<TechStack />} />
+          <Route path="tech-stack" element={<ITConsultation />} />
+          <Route path="tech-stack" element={<WebAndMobileServices />} />
+          <Route path="tech-stack" element={<ERP />} />
+          <Route path="tech-stack" element={<AIDA />} />
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}
