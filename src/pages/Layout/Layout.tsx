@@ -5,17 +5,18 @@ import { useNavigate } from "react-router-dom";
 
 
 import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import officetable from '/Images/officetable.png'
+// import officetable from '/Images/officetable.png'
 import plane from '/Images/plane.png';
 import table2 from  '/Images/table2.png';
 import dustbin from '/Images/dustbin.png';
 import earth from '/Gif/earth.gif';
 import telephone from '/Images/telephone.png';
+import book from '/Images/book.png';
+import Footer from '../../components/Footer/Footer';
 
 
 const images = [
-  { top: "68%", left: "8%", label: "", route: "", img: dustbin, h: 15, w: 15   },
+  { top: "60%", left: "8%", label: "", route: "", img: dustbin, h: 0  , w: 0   },
   //careers , tech stacks contact
   {
     top: "27%",
@@ -27,25 +28,33 @@ const images = [
     w: 5,
   },
 
-  { top: "15%", left: "13%", label: "Services", route: "/blogs", img: earth,h: 8, w: 8 },
+  { top: "15%", left: "13%", label: "Services", route: "/services", img: earth,h: 8, w: 8 },
   
   {
     top: "53%",
     left: "65%",
     label: "Tech stacks",
-    route: "/pricing",
+    route: "/tech-stack",
     img: table2,
     h: 25,
     w: 34.3,
   },
   {
-    top: "45%",
-    left: "25%",
+    top: "44%",
+    left: "10%",
     label: "Contact",
     route: "/contact",
     img: telephone,
     h : 3,
     w: 3,
+  },
+  {
+    top: "45%",
+    left: "25%",
+    label: "About",
+    route: "/about",
+    img: book,
+
   },
   
 ];  
@@ -66,14 +75,13 @@ const Layout = () => {
     const x = e.clientX - window.innerWidth / 2;
     const y = e.clientY - window.innerHeight / 2;
     setBgOffset({ x: x / 60, y: y / 60 }); // Slow movement for background
-    setDotOffset({ x: x / 30, y: y / 30 }); // Faster movement for dots
+    setDotOffset({ x: x / 60, y: y / 60 }); // Faster movement for dots
     setBarOffset({ x: x / 30, y: y / 30 });
   };
 
-
+ 
   return (
     <div
-      onMouseMove={handleMouseMove}
       
       style={{
         // backgroundImage: `url('/Images/bgImg.png')`,
@@ -82,14 +90,21 @@ const Layout = () => {
         minHeight: '100vh',
         width: '100%',
         position: 'absolute',
-        transform: `translate(${bgOffset.x}px, ${bgOffset.y}px)`,
-
+        overflow: 'hidden',
+        scrollbarWidth: 'none', // Hide scrollbar in Firefox
+        msOverflowStyle: 'none', // Hide scrollbar in IE and Edge
       }}
       >
       <Header /> 
       {/* <img src={bgImg} alt="Background" className='w-[100vw] h-[100vh] object-fit fixed -z-5' /> */}
 
-      <div className="flex h-[100vh] w-full  relative">
+      <div
+      onMouseMove={handleMouseMove}
+      style={{
+        transform: `translate(${bgOffset.x}px, ${bgOffset.y}px)`,
+
+      }}
+      className="flex h-[100vh] w-full relative">
 
       {images.map((dot, index) => (
         <button
@@ -98,18 +113,26 @@ const Layout = () => {
           style={{
             top: dot.top,
             left: dot.left,
-            // Use CSS translate function, not translation function
+           
             transform: `translate(${dotOffset.x}px, ${dotOffset.y}px)`,
             transition: "transform 0.3s ease-out",
           }}
           onMouseEnter={() => setHoveredLabel(dot.label)}
           onMouseLeave={() => setHoveredLabel(null)}
-          onDoubleClick={() => navigate(dot.route)}
+          onClick={() => navigate(dot.route)}
         >
           
           <img
             src={dot.img}
-            className={`${dot.img==telephone?"h-[6rem] w-[6rem] rotate-9":`h-[${dot.h}rem] w-[${dot.w}rem]`} hover:scale-125`}
+            // className={`${dot.img==telephone?"h-[6rem] w-[6rem] rotate-9":`h-[${dot.h}px] w-[${dot.w}px]`} hover:scale-125`}
+            className={
+              `${dot.img==telephone?"h-[4rem] w-[4rem] ":`h-[5rem] w-[5rem]`}
+              ${dot.img==earth?"h-[8rem] w-[8rem]":""}
+              ${dot.img==table2?"h-[25rem] w-[34.3rem]":""}
+              ${dot.img==dustbin?"h-[11rem] w-[11rem]":""}
+              ${dot.img==plane?"h-[5rem] w-[5rem]":""}
+              ${dot.img==book?"h-[7rem] w-[7rem] ":""}
+              hover:scale-125`}
             alt="Decorative background or button overlay"
             //   style={{
 
@@ -130,7 +153,7 @@ const Layout = () => {
       </div>
 
       <Outlet />
-      {/* <Footer/> */}
+      <Footer/>
       {/* Add any additional layout components here */}
     </div>
   )
