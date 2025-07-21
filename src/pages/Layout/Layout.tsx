@@ -1,48 +1,66 @@
 import './Layout.css'
 import { Outlet } from 'react-router'
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
+
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
-import bgImg from '/Images/bgImg.png'
-
+import officetable from '/Images/officetable.png'
 import plane from '/Images/plane.png';
-import table from  '/Images/table.png';
+import table2 from  '/Images/table2.png';
 import dustbin from '/Images/dustbin.png';
 import earth from '/Gif/earth.gif';
-import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import telephone from '/Images/telephone.png';
 
 
 const images = [
-  { top: "10%", left: "85%", label: "About", route: "/about", img: dustbin },
+  { top: "68%", left: "8%", label: "", route: "", img: dustbin, h: 15, w: 15   },
+  //careers , tech stacks contact
   {
-    top: "63%",
-    left: "75%",
-    label: "Collection",
-    route: "/collections",
+    top: "27%",
+    left: "83%",
+    label: "careers",
+    route: "/careers",
     img: plane,
+    h: 5,
+    w: 5,
   },
-  { top: "60%", left: "7%", label: "Blogs", route: "/blogs", img: earth },
+
+  { top: "15%", left: "13%", label: "Services", route: "/blogs", img: earth,h: 8, w: 8 },
+  
   {
-    top: "37%",
-    left: "40%",
-    label: "Pricing",
+    top: "53%",
+    left: "65%",
+    label: "Tech stacks",
     route: "/pricing",
-    img: table,
+    img: table2,
+    h: 25,
+    w: 34.3,
+  },
+  {
+    top: "45%",
+    left: "25%",
+    label: "Contact",
+    route: "/contact",
+    img: telephone,
+    h : 3,
+    w: 3,
   },
   
 ];  
 
 
-type Props = {}
+// type Props = {}
 
-const Layout = (props: Props) => {
+const Layout = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [hoveredLabel, setHoveredLabel] = useState<string | null>(null);
   const [bgOffset, setBgOffset] = useState({ x: 0, y: 0 });
   const [dotOffset, setDotOffset] = useState({ x: 0, y: 0 });
   const [barOffset, setBarOffset]= useState({x: 0,y: 0});
     // const { t } = useTranslation();
-
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const x = e.clientX - window.innerWidth / 2;
@@ -58,10 +76,14 @@ const Layout = (props: Props) => {
       onMouseMove={handleMouseMove}
       
       style={{
-        backgroundImage: `url('/Images/bgImg.png')`,
+        // backgroundImage: `url('/Images/bgImg.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '100vh',
+        width: '100%',
+        position: 'absolute',
+        transform: `translate(${bgOffset.x}px, ${bgOffset.y}px)`,
+
       }}
       >
       <Header /> 
@@ -80,14 +102,14 @@ const Layout = (props: Props) => {
             transform: `translate(${dotOffset.x}px, ${dotOffset.y}px)`,
             transition: "transform 0.3s ease-out",
           }}
+          onMouseEnter={() => setHoveredLabel(dot.label)}
+          onMouseLeave={() => setHoveredLabel(null)}
           onDoubleClick={() => navigate(dot.route)}
         >
-          <span className="tooltip group-hover:scale-100 transition-transform duration-300 ease-out">
-            {dot.label}
-          </span>
+          
           <img
             src={dot.img}
-            className="h-[15rem] w-[15rem] hover:scale-125"
+            className={`${dot.img==telephone?"h-[6rem] w-[6rem] rotate-9":`h-[${dot.h}rem] w-[${dot.w}rem]`} hover:scale-125`}
             alt="Decorative background or button overlay"
             //   style={{
 
@@ -98,6 +120,13 @@ const Layout = (props: Props) => {
           />
         </button>
       ))}
+      {/* ✨ Render label outside the button for true screen centering */}
+  {hoveredLabel && (
+    <span className="centered-label">
+      {hoveredLabel}
+    </span>
+  )}
+      {/* <img src={officetable} alt="Office Table" className="absolute top-[4 0%] left-[55%] h-[600px] w-[550px] hover:scale-125 -rotate-0.5" /> */}
       </div>
 
       <Outlet />
