@@ -2,7 +2,7 @@ import { BrowserRouter,Route,Routes } from 'react-router'
 
 import './App.css'
 import Home from './pages/Home/Home'
-import About from './components/About/About'
+import About from './pages/About/About'
 import Layout from './pages/Layout/Layout'
 import bgImg from '/Images/bgImg.png'
 
