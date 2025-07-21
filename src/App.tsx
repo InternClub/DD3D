@@ -5,7 +5,6 @@ import Home from './pages/Home/Home'
 import About from './components/About/About'
 import Layout from './pages/Layout/Layout'
 import bgImg from '/Images/bgImg.png'
-import Footer from './components/Footer/Footer'
 
 
 function App() {
