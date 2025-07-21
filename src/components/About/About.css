@@ -1,0 +1,50 @@
+.button3:hover {
+  transform: scale(1.2);
+  background: #11ba3b;
+  transition: 0.3s ease-in-out;
+  /* will-change: scroll-position; */
+}
+
+.button3:hover .title span {
+  display: none;
+}
+
+.button3:hover .title:after {
+  content: " Made a good decision";
+}
+
+.button1:hover {
+  transform: scale(1.2);
+  background: #11ba3b;
+  transition: all 0.3s ease-in-out;
+}
+.button1:hover .title1 span {
+  display: none;
+ 
+}
+.button1:hover .title1::after {
+  content: "Go and Learn";
+}
+.button2:hover {
+  transform: scale(1.2);
+   background: #11ba3b;
+  transition: all 0.3s ease-in-out;
+}
+.button2:hover .title2 span {
+  display: none;
+}
+.button2:hover .title2::after {
+  content: "Ready to Go";
+}
+
+.button4:hover{
+    transform: scale(1.2);
+    background: #11ba3b;
+    transition: all 0.3s ease-in-out;
+}
+.button4:hover .title span{
+    display: none;
+}
+.button4:hover .title::after{
+    content: "Your First Step";
+}

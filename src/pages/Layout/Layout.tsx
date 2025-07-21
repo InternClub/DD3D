@@ -101,7 +101,7 @@ const Layout = (props: Props) => {
       </div>
 
       <Outlet />
-      <Footer/>
+      {/* <Footer/> */}
       {/* Add any additional layout components here */}
     </div>
   )
