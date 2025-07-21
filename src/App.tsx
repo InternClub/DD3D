@@ -35,7 +35,7 @@ function App() {
     }
     >
 
-      <img src={bgImg} alt="Background" className='w-[100vw] h-[100vh] object-fit fixed  -z-5' />
+      <img src={bgImg} alt="Background" className='w-[100vw] h-full  fixed  -z-5' />
     
 
       <BrowserRouter>

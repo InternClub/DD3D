@@ -1,5 +1,6 @@
 import React from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
+
 import soiImg from "/Images/soiImg.png";
 import nhpcImg from "/Images/nhpcImg.png";
 import ifImg from "/Images/ifImg.png";
@@ -8,12 +9,13 @@ import "./About.css";
 import "remixicon/fonts/remixicon.css";
 import Svg from "./Svg";
 import Svg2 from "./Svg2";
+import AboutCard from "../../components/Section/AboutCard";
 
 type Props = {};
 
 const About = (props: Props) => {
   return (
-    <div className="w-[100vw] h-[100vh] ">
+    <div className="w-full h-[100vh] flex flex-col">
       <div className="flex items-center justify-center bg-gray-300 rounded-2xl mt-20 ml-40 mr-40 backdrop-blur-4xl ">
         <div className="flex items-center flex-col h-[50%] w-[50%] gap-8 m-5 p-3 ">
           <p className="font-bold text-5xl text-blue-800  ">
@@ -55,12 +57,12 @@ const About = (props: Props) => {
       <div className="flex items-center justify-center bg-gray-300 rounded-2xl mt-20 ml-40 mr-40 backdrop-blur-4xl">
         <div className="flex item-center justify-around w-[50%] h-[50%] ml-15 backdrop-blur-lg ">
           {/* <img src='/Gif/Coding.json' /> */}
-          <Player 
-          autoplay
-          loop 
-          className="hover:scale-[1.1]"
-          src="/Gif/Coding.json">
-          </Player>
+          <Player
+            autoplay
+            loop
+            className="hover:scale-[1.1]"
+            src="/Gif/Coding.json"
+          ></Player>
         </div>
         <div className="flex flex-col  m-10 p-5 gap-5 ">
           <p className="text-blue-800 font-extrabold text-5xl ">
@@ -95,50 +97,8 @@ const About = (props: Props) => {
             We are deeply committed to the growth and success of our clients.
           </p>
         </div>
-        <div>
-            <div>
-                <div>
-                    <Player
-                    autoplay
-                    loop
-                    className="hover:scale-[1.05]"
-                    src='/Gif/Coding.json'
-                    >
-                    </Player>
-                </div>
-                <div>Web Development</div>
-                <div>We are a top-tier IT company with a strong track record in designing and developing robust websites and mobile applications. Our expert team has successfully delivered cutting-edge digital solutions across various industries including Healthcare, FinTech, EdTech, Retail, Logistics, and more.</div>
-            </div>
-            <div>
-                <div>
-                    <Player
-                    autoplay
-                    loop
-                    src='/Gif/'
-                    >
-
-                    </Player>
-                </div>
-                <div></div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div>
-                <div>
-                    <Player></Player>
-                </div>
-                <div></div>
-                <div></div>
-            </div>
+        <div className="w-full py-8">
+          <AboutCard />
         </div>
       </div>
       <div className="flex items-center justify-center bg-gray-300 mt-20 ml-40 mr-40 backdrop-blur-3xl rounded-2xl">
@@ -158,8 +118,8 @@ const About = (props: Props) => {
             through bespoke web and mobile applications.
           </p>
         </div>
-        </div>
-         <div className="flex items-center justify-center bg-gray-300 mt-20 ml-40 mr-40 backdrop-blur-3xl rounded-2xl">
+      </div>
+      <div className="flex items-center justify-center bg-gray-300 mt-20 ml-40 mr-40 backdrop-blur-3xl rounded-2xl">
         <div className="m-12  p-5">
           <div className="text-blue-800">
             <Svg2 />
@@ -186,15 +146,19 @@ const About = (props: Props) => {
           <p>Some of our clients.</p>
         </div>
         <div className="flex flex-row justify-between gap-40 p-10 m-10">
-          <img src={soiImg} className="h-40 w-40" />
-          <img src={nhpcImg} className="rounded-3xl h-40 w-40" />
-          <img src={ifImg} className="h-40 w-40" />
+          <img src={soiImg} className="h-40 w-40 hover:scale-150" />
+          <img src={nhpcImg} className="rounded-3xl h-40 w-40 hover:scale-150" />
+          <img src={ifImg} className="h-40 w-40 hover:scale-150" />
         </div>
       </div>
       <div className="flex items-center justify-center bg-pink-600 ml-40 mr-40 mt-20 rounded-2xl p-10 ">
         <div className="flex flex-col m-5 ml-10 p-5">
-          <p className="text-4xl font-extrabold">Are you ready to scale your business?</p>
-          <p className="text-2xl font-medium">Get in touch and let us build something amazing <b> together!</b></p>
+          <p className="text-4xl font-extrabold">
+            Are you ready to scale your business?
+          </p>
+          <p className="text-2xl font-medium">
+            Get in touch and let us build something amazing <b> together!</b>
+          </p>
         </div>
         <div className="button4 flex   rounded-2xl  bg-blue-800 text-white p-3">
           <button className="title">
