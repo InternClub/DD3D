@@ -9,6 +9,10 @@
   width: 100vw;
   background-size: cover;
   background-position: center; */
+  backgroundSize : 'cover';
+  backgroundRepeat : 'no-repeat';
+  scale: '1.1';
+  /* overflow: hidden; */
 }
 
 

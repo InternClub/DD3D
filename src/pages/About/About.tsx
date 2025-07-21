@@ -12,7 +12,7 @@ import Svg2 from "./Svg2";
 type Props = {};
 
 const About = (props: Props) => {
-  return (
+  return (  
     <div className="w-[100vw] h-[100vh] ">
       <div className="flex items-center justify-center bg-gray-300 rounded-2xl mt-20 ml-40 mr-40 backdrop-blur-4xl ">
         <div className="flex items-center flex-col h-[50%] w-[50%] gap-8 m-5 p-3 ">

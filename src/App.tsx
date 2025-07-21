@@ -8,6 +8,8 @@ import bgImg from '/Images/bgImg.png'
 
 
 import { useState } from 'react'
+import { Career } from './pages/Career/Career'
+import TechStack from './pages/TechStacks/TechStack'
 
 
 
@@ -23,19 +25,20 @@ function App() {
   
 
   return (
-    <div onMouseMove={handleMouseMove} 
-    style={
+    <div 
+    onMouseMove={handleMouseMove} 
+   
+    >
+
+      <img src={bgImg} alt="Background" className='w-[100vw] h-[100vh] object-fit fixed  -z-5'
+       style={
       {
         transform: `translate(${barOffset.x}px, ${barOffset.y}px)`,
         backgroundPosition: `${barOffset.x}px ${barOffset.y}px`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        scale: '1.1',
+        backgroundSize : 'cover',
       }
     }
-    >
-
-      <img src={bgImg} alt="Background" className='w-[100vw] h-[100vh] object-fit fixed  -z-5' />
+      />
     
 
       <BrowserRouter>
@@ -43,6 +46,9 @@ function App() {
           <Route path="/" element={<Layout/>} />
           <Route  path='home' index element={<Home />} />
           <Route path="about" index element={<About />} />
+          <Route path="careers" index element={<Career />} />
+          <Route path="*" element={<div className='flex items-center justify-center h-[100vh] text-4xl font-bold'>404 Not Found</div>} />
+          <Route path="tech-stack" element={<TechStack />} />
 
         </Routes>
       </BrowserRouter>
