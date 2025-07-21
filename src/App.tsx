@@ -38,6 +38,9 @@ function App() {
         backgroundSize : 'cover',
       }
     }
+    >
+
+      <img src={bgImg} alt="Background" className='w-[100vw] h-full  fixed  -z-5' />
       />
     
 

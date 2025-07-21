@@ -32,7 +32,7 @@ const Footer = (props: Props) => {
           <p className="font-bold">Follow us on social media.</p>
           <a
             href="https://www.linkedin.com/company/drdesignpvtltd/"
-            className="h-10 w-10"
+            className="h-10 w-10 hover:scale-200"
           >
             <Player autoplay loop src="/Gif/linked.json"></Player>
           </a>
