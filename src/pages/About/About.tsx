@@ -3,7 +3,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import soiImg from "/Images/soiImg.png";
 import nhpcImg from "/Images/nhpcImg.png";
 import ifImg from "/Images/ifImg.png";
-import Footer from "../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import "./About.css";
 import "remixicon/fonts/remixicon.css";
 import Svg from "./Svg";
