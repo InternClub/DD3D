@@ -55,3 +55,37 @@
 .dot-button:hover .tooltip {
   opacity: 1;
 }
+
+.centered-label {
+  position: fixed;
+  top: 35%;
+  left: 43%;
+  /* transform: translate(50%, 50%); */
+  /* background: rgba(255, 255, 255, 0.8); */
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 5.2rem;
+  font-weight: bold;
+  font-family:  'Irish Grover'
+  z-index: 50;
+  pointer-events: none;
+  color: #FFEDF3;
+  /* transition: opacity 1.3s fade-in-out */
+    animation: fade-in-out 3s ;
+
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  /* 100% {
+    opacity: 0;
+    transform: translateY(20px);
+  } */
+}

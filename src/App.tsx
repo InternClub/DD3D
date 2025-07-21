@@ -7,9 +7,33 @@ import Layout from './pages/Layout/Layout'
 import bgImg from '/Images/bgImg.png'
 
 
+import { useState } from 'react'
+
+
+
 function App() {
+
+    const [barOffset, setBarOffset]= useState({x: 0,y: 0});
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const x = e.clientX - window.innerWidth / 2;
+    const y = e.clientY - window.innerHeight / 2;
+    setBarOffset({ x: x / 50, y: y / 50 });
+  };
+  
+
   return (
-    <div >
+    <div onMouseMove={handleMouseMove} 
+    style={
+      {
+        transform: `translate(${barOffset.x}px, ${barOffset.y}px)`,
+        backgroundPosition: `${barOffset.x}px ${barOffset.y}px`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        scale: '1.1',
+      }
+    }
+    >
 
       <img src={bgImg} alt="Background" className='w-[100vw] h-[100vh] object-fit fixed  -z-5' />
     
