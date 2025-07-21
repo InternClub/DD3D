@@ -22,11 +22,6 @@
 
 .dot-button {
   position: absolute;
-  /* width: 14px;
-  height: 14px; */
-  /* background-color: #ff005dad; */
-  /* border: 2px solid white; */
-  /* border-radius: 50%; */
   cursor: pointer !important;
   z-index: 2;
   transition: transform 0.2s ease;
@@ -43,8 +38,7 @@
 /* Tooltip styling */
 .tooltip {
   position: absolute;
-  bottom: 50%; /* Show above the dot */
-  /* background-color: rgba(0, 0, 0, 0.75); */
+  bottom: 50%; 
   color: #32ffee;
   padding: 4px 8px;
   border-radius: 4px;

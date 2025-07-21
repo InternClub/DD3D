@@ -130,7 +130,7 @@ const Layout = () => {
       </div>
 
       <Outlet />
-      <Footer/>
+      {/* <Footer/> */}
       {/* Add any additional layout components here */}
     </div>
   )
