@@ -14,7 +14,7 @@ type Card = {
 
 const AboutCard = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollInterval = useRef<NodeJS.Timeout>();
+  const scrollInterval = useRef<number>(0);
   const isScrolling = useRef(false);
   const [isHoveringLeft, setIsHoveringLeft] = useState(false);
   const [isHoveringRight, setIsHoveringRight] = useState(false);
@@ -120,7 +120,7 @@ const AboutCard = () => {
       });
     };
 
-    let interval: NodeJS.Timeout;
+    let interval: number;
 
     if (isHoveringLeft) {
       interval = setInterval(scrollLeft, 300);
