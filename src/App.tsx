@@ -50,10 +50,10 @@ function App() {
             }
           />
           <Route path="tech-stack" element={<TechStack />} />
-          <Route path="tech-stack" element={<ITConsultation />} />
-          <Route path="tech-stack" element={<WebAndMobileServices />} />
-          <Route path="tech-stack" element={<ERP />} />
-          <Route path="tech-stack" element={<AIDA />} />
+          <Route path="it-consultation" element={<ITConsultation />} />
+          <Route path="web-mobile-development" element={<WebAndMobileServices />} />
+          <Route path="erp-development" element={<ERP />} />
+          <Route path="ai-data-analytics" element={<AIDA />} />
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}
